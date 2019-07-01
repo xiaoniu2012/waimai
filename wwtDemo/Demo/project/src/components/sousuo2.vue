@@ -171,15 +171,16 @@ export default {
   margin-bottom: 1px;
 }
 .li2{
-  width:3.35rem;
+     width: 3.55rem;
 }
 .qk{
-   height: 0.15rem;
+   height: 0.1rem;
    text-align: center;
    line-height: 0.1rem;
    width: 100%;
    font-size: 0.15rem;
-   width: 3.35rem;
+   width: 3.55rem;
+   background-color: #f5f5f5;
 }
 #ul2{
   background-color: white;
@@ -213,6 +214,8 @@ export default {
 #shuru {
   width: 95%;
   height: 0.4rem;
+      border: 0.01rem solid gray;
+          font-size: 0.15rem;
 }
 #tijiao {
   background-color: rgb(48, 144, 232);
@@ -222,14 +225,15 @@ export default {
   font-size: 0.28rem;
 }
 ul {
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
 }
 ul li {
-  padding: 0.2rem;
+  padding: 0.1rem;
+  padding-top: 0;
   background-color: white;
   border-bottom: 1px solid gray;
 }
 ul li p {
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
 }
 </style>

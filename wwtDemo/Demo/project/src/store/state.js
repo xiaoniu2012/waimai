@@ -32,7 +32,8 @@
    kong:[],
    totalprice:0,
    obj:[],
-  //  hongbaodata:""
+   one:"",
+  //  用来保存所选的地址
     // count:9,
     // count2:88,
     // count3:33,

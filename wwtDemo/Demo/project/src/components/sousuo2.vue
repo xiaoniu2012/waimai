@@ -8,7 +8,7 @@
       <button @click="search()" id="tijiao">提交</button>
     </div>
     <ul>
-      <li :key="i" v-for="(v,i) in food" @click="jumpshop1(i)">
+      <li :key="i" v-for="(v,i) in food" @click="jumpshop1(i,v.name)">
         <div @click="addss(v.name,v.address,v.geohash,v.longitude,v.latitude)">
           <router-link :to="'/shop1?name='+v.name">
         <h3 class="ming">{{v.name}}</h3>
@@ -84,14 +84,9 @@ export default {
         });
       }
     },
-    jumpshop1(i,v){
+    jumpshop1(i,n){
           this.$store.commit("jing", this.food[i].geohash);
-          console.log(this.food[i].geohash);
-          console.log(i)
-        //  this.$router.push({
-        //       name:"shop1",
-        //       query:v
-        //  });
+          this.$store.commit("getone",n);
     },
     addss(a,b,c,d,e){
         if(localStorage.name){

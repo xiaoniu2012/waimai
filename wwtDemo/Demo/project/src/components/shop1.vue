@@ -131,11 +131,9 @@ export default {
     }
   },
   created() {
-    this.chengshi = this.$route.query.name;
-    console.log(this.chengshi);
+    this.chengshi = this.$store.state.one;
     this.shopdian();
     this.allshop();
-    console.log(this.$store.state.jingdu);
     loadingInstance = Loading.service({
       fullscreen: true,
       text: "拼命加载中",

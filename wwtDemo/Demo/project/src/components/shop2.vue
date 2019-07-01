@@ -310,13 +310,13 @@ export default {
   height: 100%;
 }
 .paixu {
-  width: 120px;
+  width: 1.2rem;
 }
 .shaixuan {
-  width: 120px;
+  width: 1.2rem;
 }
 .fenlei {
-  width: 120px;
+  width: 1.2rem;
 }
 #bt {
   float: left;
@@ -324,17 +324,18 @@ export default {
   margin-top: 5px;
 }
 #top1 {
-  float: right;
-  letter-spacing: 2px;
-  margin-top: 5px;
+      float: right;
+    letter-spacing: 0.02rem;
+    /* margin-top: 0.05rem; */
+    margin-right: 0.5rem;
 }
 #a1 {
-  background-color: blue;
-  border: 1px solid blue;
+  background-color: #3190e8;
+  border: 1px solid #3190e8;
   border-radius: 2px;
 }
 #a2 {
-  color: blue!important;
+  color: #3190e8!important;
   border-radius: 2px;
   box-sizing: border-box;
   border: 1px solid blue;
@@ -355,11 +356,9 @@ export default {
   margin-top: 5px;
 }
 #right {
-  float: right;
-  height: 100%;
-  width: 130px;
-  margin-right: 10px;
-  margin-top: -80px;
+  /* float: right; */
+
+
 }
 #left {
   float: left;
@@ -381,7 +380,7 @@ export default {
 }
 #distance {
   float: left;
-  margin-left: -10px;
+  margin-left: -0.3rem;
   font-size: 0.1rem;
 }
 #ping {
@@ -432,19 +431,21 @@ export default {
   float: left;
 }
 #bottom2 {
-  width: 100%;
-  height: 80px;
-  float: left;
+ width: 100%;
+    height: 0.8rem;
+    float: left;
+    margin-top: 0.1rem;
+    border-bottom: 0.005rem solid gainsboro;
 }
 #bottom1 img {
-  width: 27px;
-  height: 27px;
-  float: left;
+      width: 0.27rem;
+    float: left;
+    margin-top: 0.05rem;
 }
 #bottom1 div {
   font-size: 0.15rem;
   float: left;
-  margin-top: 2px;
+      margin-top: 0.07rem;
 }
 #bottom1 {
   float: left;
@@ -517,9 +518,9 @@ export default {
 }
 #center12 {
   left: 0;
-  height: 25px;
+  height: 0.25rem;
   position: fixed;
-  top: 50px;
+  top: 0.5rem;
   display: flex;
   justify-content: space-around;
   direction: row;
@@ -533,15 +534,16 @@ export default {
   margin-left: 5px;
 }
 #top12 {
-  height: 50px;
-  background-color: blue;
-  position: fixed;
-  left: 0;
-  top: 0;
-  text-align: center;
-  color: white;
-  font-size: 0.25rem;
-  width: 100%;
-  font-weight: bold;
+  height: 0.5rem;
+    line-height: 0.5rem;
+    background-color: #3190e8;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+    color: white;
+    font-size: 0.25rem;
+    width: 100%;
+    font-weight: bold;
 }
 </style>

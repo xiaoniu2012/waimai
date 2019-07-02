@@ -35,8 +35,8 @@
       <div class="allcontent" v-if="show">
         <ul class="hotShangping" style="overflow-y:scroll;height:65vh">
           <li :key="i" v-for="(value,i) in food" class="lis1">
-            <a :href="'#a'+ value.id" class="da" @click="chepi()">{{value.name}}</a>
-            <span v-if="nums[i]">{{nums[i]}}</span>
+            <a :href="'#a'+ value.id" class="da" @click="chepi(i)">{{value.name}}</a>
+            <span v-if="nums[i]" class="jing">{{nums[i]}}</span>
           </li>
         </ul>
       </div>
@@ -98,7 +98,7 @@
         </p>
         <div class="cargoline" v-for="(y,z) in sk1" :key="z">
           <div>
-            <span>{{y.name}}</span>
+            <span class="love1">{{y.name}}</span>
           </div>
           <div class="bug">
             <span v-if="y.specfoods.length==1 ">￥{{y.specfoods[0].price}}</span>
@@ -111,10 +111,11 @@
         </div>
       </div>
     </div>
+
     <div id="jiesuan">
-      <img src="../assets/img/gouwuche.png" alt />
-      <p class="yi" @click="alldian()">￥{{allmoney}}</p>
-      <p class="er" @click="clall()">配送费￥5</p>
+      <img src="../assets/img/gouwuche.png" @click="alldian()" />
+      <p class="yi">￥{{allmoney}}</p>
+      <p class="er">配送费￥5</p>
       <p id="zong" v-if="num>0">{{num}}</p>
       <router-link :to="'/dingdan?ming='+msg+'&pian='+imagepath">
         <p class="suan">去结算</p>
@@ -147,7 +148,7 @@ export default {
       show2: false,
       total: 0,
       y2: "",
-      shopping: false,
+      shopping: true,
       jia: false,
       xian: 0,
       foodname: "",
@@ -166,6 +167,7 @@ export default {
     this.feiyong = this.$route.query.fei;
     this.allshop();
     this.allfood();
+    this.chepi();
   },
   methods: {
     tianjia(v, k, a, b) {
@@ -212,13 +214,14 @@ export default {
         this.allmoney = 0;
       }
     },
-    chepi(){
-      for(var i=0;i<qun.length;i++)
+    chepi(n){
+      var yu=document.getElementsByClassName("lis1");
+      for(var i=0;i<yu.length;i++)
       {
-         qun[i].style.backgroundColor="";
-          qun[i].onclick=function()
+        yu[i].style.backgroundColor="";
+          yu[i].onclick=function()
           {
-            this.style.backgroundColor="blue";
+            yu[n].style.backgroundColor="blue";
           }
       }
     },
@@ -353,11 +356,20 @@ export default {
 };
 </script>
 <style scoped>
+.love1{
+   background-color: blue;
+   float: left;
+}
+.jing{
+   background-color: red;
+   border-radius: 50%;
+}
 .guai {
   color: white;
 }
 .bug {
-  background-color: white;
+  background-color: blue;
+   margin-left: -0.5rem;
 }
 #push {
   width: 20px;
@@ -396,8 +408,8 @@ export default {
   font-size: 0.1rem;
   color: white;
   position: fixed;
-  left: 35px;
-  top: 590px;
+  left: 0.34rem;
+  top: 5.9rem;
   z-index: 3;
   text-align: center;
   line-height: 25px;
@@ -586,6 +598,9 @@ a {
   border-right: 1px solid lightgray;
   height: 0.7rem;
   line-height: 0.7rem;
+  font-size: 0.25rem;
+  font-weight: bold;
+  text-align: center;
 }
 .allfoodsImg {
   width: 0.5rem;
@@ -709,13 +724,12 @@ a {
   background-color: lightblue;
   line-height: 0.35rem;
 }
-.jiangou,
-.jiagou {
+.jiangou,.jiagou {
   /* margin-right: 0.05rem; */
   border-radius: 50%;
   font-size: 0.15rem;
   padding: 0.05rem;
-  padding-left: 0.08rem;
+  padding-left: 0.1rem;
   padding-right: 0.08rem;
   margin-right: 0.05rem;
   float: left;
@@ -731,6 +745,7 @@ a {
   font-weight: bold;
   width: 0.1rem;
   margin-top: 0.05rem;
+  margin-right: 0.1rem;
 }
 .pshop1 {
   height: 0.35rem;

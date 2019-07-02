@@ -70,12 +70,13 @@
                     <span class="guai">规格</span>
                   </router-link>
                 </p>
-
+                 
                 <p
                   v-if="!v.specifications[0]"
                   class="gege"
-                  @click="tianjia(v.specfoods[0].price,v.name,i2,i3)"
+                  @click="tianjia(v.specfoods[0].price,v.name,i2,i3,$event)"
                 >+</p>
+                 <div class="ball"></div>
                 <span class="snow" v-if="v.is_featured>0">{{v.is_featured}}</span>
                 <p
                   v-if="v.is_featured>0"
@@ -124,7 +125,6 @@
     <div id="push" @click.stop="fanjia()">
       <img src="../assets/img/back.png" />
     </div>
-     <div id="ball"></div>
   </div>
 </template>
 <script>
@@ -169,7 +169,7 @@ export default {
     this.allfood();
   },
   methods: {
-    tianjia(v, k, a, b) {
+    tianjia(v, k, a, b,evt) {
       this.$store.commit("getindex", {
         a: a,
         b: b
@@ -185,21 +185,21 @@ export default {
       //所选加号下的下标对应的价格
       this.shu1++;
       //  所选取的数量结果
-      var $ball = document.getElementById("ball");
+      var $ball = document.getElementsByClassName("ball");
       var su = document.getElementsByClassName("gege");
-      for (var i = 0; i < su.length; i++) {
+      // for (var i = 0; i < su.length; i++) {
         // window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
-        su[i].onclick = function (evt) {
-        $ball.style.top = evt.pageY + "px";
-        $ball.style.left = evt.pageX + "px";
-        $ball.style.transition = "left 0s, top 0s";
+        // su[i].onclick = function (evt) {
+        $ball[b].style.top = evt.pageY + "px";
+        $ball[b].style.left = evt.pageX + "px";
+        $ball[b].style.transition = "left 0s, top 0s";
         setTimeout(() => {
-          $ball.style.top = window.innerHeight - 38 + "px";
-          $ball.style.left = "5px";
-          $ball.style.transition = "left 1s linear, top 1s ease-in";
+          $ball[b].style.top = window.innerHeight - 38 + "px";
+          $ball[b].style.left = "5px";
+          $ball[b].style.transition = "left 1s linear, top 1s ease-in";
         }, 20);
-        }
-      }
+        // }
+      // }
       if(this.allmoney=20)
       {
          this.qusong="去结算";

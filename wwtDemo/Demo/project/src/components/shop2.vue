@@ -355,11 +355,6 @@ export default {
   margin-left: 20px;
   margin-top: 5px;
 }
-#right {
-  /* float: right; */
-
-
-}
 #left {
   float: left;
   width: 200px;

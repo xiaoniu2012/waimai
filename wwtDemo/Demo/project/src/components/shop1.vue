@@ -190,41 +190,38 @@ export default {
 #top1 {
   float: right;
   letter-spacing: 2px;
-  margin-top: 0.7rem;
-  margin-right: 0.1rem;
+  margin-top: 70px;
 }
 #a1 {
-  background-color: #3190e8;
+  background-color: blue;
   border-radius: 2px;
   border: 1px solid blue;
-    color: white;
 }
 #a2 {
   border: 1px solid blue;
   border-radius: 2px;
-  color: #3190e8;
 }
 #center1 {
   float: right;
-  width: 2.1rem;
-  margin-top: 0.1rem;
+  width: 100px;
+  margin-top: 10px;
 }
 #center1 div {
-  float: right;
-
+  float: left;
+  color: white;
   font-size: 0.1rem;
 }
 #bt {
-  float: right;
-  margin-right: 0;
- margin-top: 0.05rem;
+  float: left;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 #right {
   float: right;
-    height: 100%;
-    width: 2.1rem;
-    margin-right: 0.1rem;
-    margin-top: -1.45rem;
+  height: 100%;
+  width: 130px;
+  margin-right: 10px;
+  margin-top: -80px;
 }
 #left {
   float: left;
@@ -247,12 +244,11 @@ export default {
 #distance {
   float: left;
   font-size: 0.1rem;
-
 }
 #ping {
   float: left;
-  height: 0.2rem;
-  width: 0.7rem;
+  height: 20px;
+  width: 70px;
   color: red;
   margin-top: 3px;
   /* background-color:green; */
@@ -298,10 +294,8 @@ export default {
 }
 #bottom2 {
   width: 100%;
-    height: 0.8rem;
-    float: left;
-    border-bottom: 0.001rem solid #f1f1f1;
-    margin-top: 0.1rem;
+  height: 80px;
+  float: left;
 }
 #bottom1 img {
   width: 27px;
@@ -319,7 +313,6 @@ export default {
 }
 .bo3 {
   font-size: 0.1rem;
-      color: black;
 }
 .bo2 img {
   width: 60px;
@@ -342,34 +335,36 @@ export default {
   height: 100%;
 }
 #center {
-  height: 2rem;
+  height: 200px;
   width: 100%;
   /* background-color: gray; */
   float: left;
 }
 
+#img1,
+#img2 {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: 10px;
+}
+#img2 {
+  float: right;
+  margin-top: -35px;
+  margin-right: 10px;
+}
 #top {
-  background-color: #3190e8;
-  height: 0.5rem;
+  background-color: blue;
+  height: 50px;
   color: white;
   font-size: 0.25rem;
   text-align: center;
   width: 100%;
   float: left;
 }
-#img2 {
-  float: right;
-  font-size: 1rem;
-  margin-top: -0.3rem;
-  margin-right:0.1rem; 
-width: 0.3rem;
-    margin-right: 0.1rem;
-}
-
-#img1{
-  width: 0.3rem;
-  height: 0.3rem;
-  float: left;
-  margin-top: 0.1rem;
+#cheng {
+  margin-top: 5px;
+  width: 3.1rem;
+  overflow: hidden;
 }
 </style>

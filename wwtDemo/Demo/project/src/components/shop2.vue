@@ -318,12 +318,15 @@ export default {
 .fenlei {
   width: 120px;
 }
-
+#bt {
+  float: left;
+  margin-left: 20px;
+  margin-top: 5px;
+}
 #top1 {
   float: right;
-  letter-spacing: 0.02rem;
-  margin-top: 0.05rem;
-  margin-left: 0.5rem;
+  letter-spacing: 2px;
+  margin-top: 5px;
 }
 #a1 {
   background-color: blue;
@@ -331,7 +334,7 @@ export default {
   border-radius: 2px;
 }
 #a2 {
-  color: #3190e8!important ;
+  color: blue!important;
   border-radius: 2px;
   box-sizing: border-box;
   border: 1px solid blue;
@@ -348,17 +351,15 @@ export default {
 }
 #bt {
   float: left;
-  margin-left: -0.1rem;
-  margin-top: 0.05rem;
-  width: 2.1rem;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 #right {
   float: right;
-    height: 100%;
-    width: 1.3rem;
-    margin-right: 0.1rem;
-    margin-top: -0.8rem;
-
+  height: 100%;
+  width: 130px;
+  margin-right: 10px;
+  margin-top: -80px;
 }
 #left {
   float: left;
@@ -380,7 +381,7 @@ export default {
 }
 #distance {
   float: left;
-  /* margin-left: -10px; */
+  margin-left: -10px;
   font-size: 0.1rem;
 }
 #ping {
@@ -431,11 +432,9 @@ export default {
   float: left;
 }
 #bottom2 {
-      width: 100%;
-    height: 0.8rem;
-    float: left;
-    border-bottom: 0.01rem solid gray;
-    margin-top: 0.1rem;
+  width: 100%;
+  height: 80px;
+  float: left;
 }
 #bottom1 img {
   width: 27px;
@@ -529,14 +528,13 @@ export default {
 }
 #top12 img {
   float: left;
-  height: 0.3rem;
-  margin-top: 0.1rem;
-  margin-left: 0.05rem;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 #top12 {
-  height: 0.5rem;
-  line-height: 0.5rem;
-  background-color: #3190e8;
+  height: 50px;
+  background-color: blue;
   position: fixed;
   left: 0;
   top: 0;
@@ -545,6 +543,5 @@ export default {
   font-size: 0.25rem;
   width: 100%;
   font-weight: bold;
-
 }
 </style>

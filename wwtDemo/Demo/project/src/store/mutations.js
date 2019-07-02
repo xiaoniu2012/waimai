@@ -87,7 +87,9 @@ xiugai(state,v){
 getjinweidu(state,v){
   this.state.jinweidu=v;
 },
-
+getone(state,v){
+  this.state.one=v;
+}
 
 
 

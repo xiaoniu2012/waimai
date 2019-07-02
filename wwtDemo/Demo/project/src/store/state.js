@@ -32,6 +32,7 @@
    kong:[],
    totalprice:0,
    obj:[],
+   one:"",
   //  hongbaodata:""
     // count:9,
     // count2:88,

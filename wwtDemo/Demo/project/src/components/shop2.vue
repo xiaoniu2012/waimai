@@ -354,8 +354,6 @@ export default {
   margin-left: 20px;
   margin-top: 5px;
 }
-<<<<<<< HEAD
-=======
 #right {
   float: right;
   height: 100%;
@@ -363,7 +361,6 @@ export default {
   margin-right: 10px;
   margin-top: -80px;
 }
->>>>>>> 1a6b5a32e40eae6bea2b793ab33f4896ef7be219
 #left {
   float: left;
   width: 200px;

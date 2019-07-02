@@ -197,19 +197,10 @@ export default {
           $ball[b].style.left = "5px";
           $ball[b].style.transition = "left 1s linear, top 1s ease-in";
         }, 20);
-<<<<<<< HEAD
-        // }
-      // }
-      if(this.allmoney=20)
-      {
-         this.qusong="去结算";
-         var yu=document.getElementById("suan");
-              yu.style.backgroundColor="green";
-=======
-        }
->>>>>>> 1a6b5a32e40eae6bea2b793ab33f4896ef7be219
-      }
+       
+     
     },
+
     jian(v, k, a, b) {
       this.$store.commit("getdele", {
         a: a,

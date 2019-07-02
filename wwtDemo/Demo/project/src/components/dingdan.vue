@@ -343,5 +343,73 @@ export default {
   position: absolute;
   opacity: 0.4;
 }
+<<<<<<< HEAD
+#hao,
+#jin4 {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+#jin2,
+#jin3 {
+  width: 100%;
+  height: 70px;
+  font-size: 0.16rem;
+  text-align: left;
+  line-height: 70px;
+  color: grey;
+}
+#jin3 {
+  color: black;
+}
+#jin1 {
+  width: 100%;
+  height: 70px;
+  font-size: 0.2rem;
+  text-align: center;
+  line-height: 70px;
+  color: black;
+  background-color: aqua;
+}
+#tu {
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-top: 0.1rem;
+  float: right
+}
+
+
+.dao {
+  font-size: 0.17rem;
+  background-color: blue;
+  color: white;
+  margin-top: 10px;
+  margin-left: 130px;
+  border-radius: 5px;
+}
+#song {
+  float: left;
+  color: blue;
+  font-size: 0.2rem;
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  line-height: 60px;
+}
+.biao {
+  width: 0.5rem;
+  height: 0.5rem;
+  float: left;
+  margin-top: 0.1rem;
+}
+
+.one {
+  margin-top: 0.05rem;
+}
+=======
+>>>>>>> 83c8c13cb59af3cd1814968ea9a0b16294e74d86
 
 </style>

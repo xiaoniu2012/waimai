@@ -168,7 +168,7 @@ export default {
   margin-bottom: 1px;
 }
 .li2{
-  width:3.35rem;
+  width:3.65rem;
 }
 .qk{
    height: 0.15rem;
@@ -222,7 +222,7 @@ ul {
   margin-top: 0.2rem;
 }
 ul li {
-  padding: 0.2rem;
+  padding-left: 0.1rem;
   background-color: white;
   border-bottom: 1px solid gray;
 }

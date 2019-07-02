@@ -7,14 +7,16 @@
     <!-- 在线客服部分 -->
     <div id="kefu">
       <div id="kefu1">
-        <a href="tel:110">
+        
           <img src="../../assets/img/kefu.png" alt>
         <p>在线客服</p>
-        </a>
+        
       </div>
       <div id="kefu2">
+        <a  href="tel:110" >
         <img src="../../assets/img/dianhua.png" alt>
         <p>在线客服</p>
+        </a>
       </div>
     </div>
     <!-- 热门问题 -->
@@ -413,6 +415,7 @@ export default {
   background-color: white;
   border: 0.1px solid rgb(246, 246, 246);
   position: relative;
+  
 }
 #kefu1 img,
 #kefu2 img {
@@ -429,6 +432,8 @@ export default {
   left: 50%;
   top: 80%;
   transform: translate(-50%, -50%);
+  color: black;
+  
 }
 #hotquestion {
   height: 0.6rem;

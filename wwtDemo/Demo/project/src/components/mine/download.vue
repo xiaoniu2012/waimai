@@ -8,16 +8,32 @@
         <img src="../../assets/img/eliaomo.png" alt="">
         <p>下载饿了么APP</p>
     </div>
-    <p id="btn">下载</p>
+    <p id="btn"  @click="tool1()">下载</p>
+    <!-- 弹窗 -->
+    <div class="frame1 animated heartBeat 0.4s" v-if="outshow1">
+      <img src="../../assets/img/pipe.png" alt>
+      <p>IOS用户请前往AppStore下载</p>
+      <div id="sure" @click="falsetool1()">
+        <p>确认</p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   name: "download",
   data() {
-    return {};
+    return {
+      outshow1: false,
+    };
   },
   methods: {
+    tool1() {
+      this.outshow1 = true;
+    },
+    falsetool1() {
+      this.outshow1 = false;
+    },
     back() {
       this.$router.back();
     }
@@ -74,5 +90,41 @@ export default {
     background-color: rgb(76, 217, 100);
     border-radius: 0.04rem;
     color: white;
+}
+
+.frame1 {
+  width: 2.75rem;
+  height: 2.25rem;
+  background-color: white;
+  border-radius: 0.1rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 1.85rem;
+  /* animation: jello 100s; */
+}
+
+.frame1 img {
+  width: 1.2rem;
+  position: absolute;
+  left: 0.75rem;
+  top: 0.05rem;
+}
+.frame1 p:nth-child(2) {
+  font-size: 0.18rem;
+  position: absolute;
+  left: 0.25rem;
+  top: 1.3rem;
+}
+#sure {
+  width: 2.75rem;
+  height: 0.45rem;
+  background-color: rgb(76, 217, 100);
+  color: white;
+  text-align: center;
+  line-height: 0.45rem;
+  font-size: 0.25rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 </style>

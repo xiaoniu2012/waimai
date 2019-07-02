@@ -16,14 +16,14 @@
       <p>送达时间</p>
       <div id="right">
         <span >尽快送达|预计{{hours}}{{fu}}{{minutes}}</span>
-        <span >{{da1}}</span>
+        <span>{{da1}}</span>
       </div>
     </div>
 
     <div id="pay">
-      <div class="fang" @click="zhifu()">
-        <span class="fukuan">支付方式</span>
-        <span class="he">
+      <div @click="zhifu()">
+        <span >支付方式</span>
+        <span >
           在线支付
           <img src="../assets/img/iconfontjiantou2.png" id="tu" />
         </span>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div id="xianjin">
+    <!-- <div id="xianjin">
       <p id="jin1">支付方式</p>
       <p id="jin2">
         货到付款(商家暂时不支持货到付款)
@@ -49,7 +49,10 @@
         </span>
       </p>
     </div>
-    <div id="yin" @click="xiaoshi()" v-show="show"></div>
+    <div id="yin" @click="xiaoshi()" v-show="show"></div> -->
+
+
+
     <div id="list">
       <p id="shop">
         <img :src="'https://elm.cangdu.org/img/'+path" alt />
@@ -69,6 +72,9 @@
         </ul>
       </div>
     </div>
+
+
+    
   </div>
 </template>
 <script>
@@ -100,7 +106,6 @@ export default {
     this.ming1 = this.$store.state.arr;
     this.ming2 = this.$store.state.arr2;
     this.jia1 = this.$store.state.arr1;
-    console.log(this.path);
   },
   methods: {
     back1() {
@@ -156,140 +161,6 @@ export default {
 };
 </script>
 <style scoped>
-.jia {
-  float: left;
-  width: 40%;
-}
-.yihui {
-  border: 1px solid grey;
-  float: left;
-  width: 60%;
-}
-.enen {
-  font-size: 0.15rem;
-}
-.en {
-  float: left;
-  margin-left: 140px;
-  font-size: 0.15rem;
-  margin-top: -25px;
-  color: orange;
-}
-#shop img {
-  width: 50px;
-  height: 50px;
-}
-#shop {
-  font-size: 0.2rem;
-  color: black;
-  font-weight: bold;
-}
-#list {
-  width: 100%;
-  height: 300px;
-  background-color: white;
-  float: left;
-}
-#xianjin {
-  width: 100%;
-  /* height: 370px; */
-  overflow: hidden;
-  z-index: 2;
-  height: 0px;
-  position: absolute;
-  top: 370px;
-  left: 0;
-  background-color: white;
-  transition: all 0.8s;
-}
-#yin {
-  width: 100%;
-  height: 83%;
-  position: absolute;
-  background-color: grey;
-  opacity: 0.4;
-}
-#hao,
-#jin4 {
-  width: 25px;
-  height: 25px;
-  float: right;
-  margin-right: 10px;
-  margin-top: 20px;
-}
-#jin2,
-#jin3 {
-  width: 100%;
-  height: 70px;
-  font-size: 0.16rem;
-  text-align: left;
-  line-height: 70px;
-  color: grey;
-}
-#jin3 {
-  color: black;
-}
-#jin1 {
-  width: 100%;
-  height: 70px;
-  font-size: 0.2rem;
-  text-align: center;
-  line-height: 70px;
-  color: black;
-  background-color: aqua;
-}
-#tu {
-  width: 25px;
-  height: 25px;
-}
-.he {
-  float: right;
-  margin-right: 10px;
-}
-.fang {
-  width: 100%;
-  height: 50%;
-  float: left;
-  font-size: 0.15rem;
-}
-#pay {
-  width: 100%;
-  height: 100px;
-  margin-top: 10px;
-  float: left;
-  background-color: white;
-}
-.fukuan {
-  font-size: 0.22rem;
-}
-.dao {
-  font-size: 0.17rem;
-  background-color: blue;
-  color: white;
-  margin-top: 10px;
-  margin-left: 130px;
-  border-radius: 5px;
-}
-#song {
-  float: left;
-  color: blue;
-  font-size: 0.2rem;
-  height: 50%;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  line-height: 60px;
-}
-.biao {
-  width: 0.5rem;
-  height: 0.5rem;
-  float: left;
-  margin-top: 0.1rem;
-}
-
-.one {
-  margin-top: 0.05rem;
-}
 #top {
   width: 3.75rem;
   height: 0.5rem;
@@ -362,12 +233,154 @@ export default {
   top: 0;
 }
 #right{
-     width: 2rem;
+     width: 2.4rem;
      position: absolute;
      left: 1.2rem;
      top: 0;
 }
 #right span:nth-child(1){
-     font-size: 0.15rem;
+     font-size: 0.16rem;
 }
+#right span:nth-child(2){
+     font-size: 0.12rem;
+     margin-left: 0.1rem;
+     color: white;
+     background-color: #3190e8;
+     padding: 0.1rem;
+}
+
+#pay {
+  width: 3.75rem;
+  height: 0.45rem;
+  margin-top: 0.1rem;
+  background-color: gold;
+  border: 3px solid blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+.jia {
+  float: left;
+  width: 40%;
+}
+.yihui {
+  border: 1px solid grey;
+  float: left;
+  width: 60%;
+}
+.enen {
+  font-size: 0.15rem;
+}
+.en {
+  float: left;
+  margin-left: 140px;
+  font-size: 0.15rem;
+  margin-top: -25px;
+  color: orange;
+}
+#shop img {
+  width: 50px;
+  height: 50px;
+}
+#shop {
+  font-size: 0.2rem;
+  color: black;
+  font-weight: bold;
+}
+#list {
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  float: left;
+}
+#xianjin {
+  width: 3.75rem;
+  border: 1px solid red;
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  top: 370px;
+  left: 0;
+  background-color: white;
+  transition: all 0.8s;
+}
+#yin {
+  width: 100%;
+  height: 83%;
+  position: absolute;
+  background-color: grey;
+  opacity: 0.4;
+}
+#hao,
+#jin4 {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+#jin2,
+#jin3 {
+  width: 100%;
+  height: 70px;
+  font-size: 0.16rem;
+  text-align: left;
+  line-height: 70px;
+  color: grey;
+}
+#jin3 {
+  color: black;
+}
+#jin1 {
+  width: 100%;
+  height: 70px;
+  font-size: 0.2rem;
+  text-align: center;
+  line-height: 70px;
+  color: black;
+  background-color: aqua;
+}
+#tu {
+  width: 25px;
+  height: 25px;
+}
+
+
+.dao {
+  font-size: 0.17rem;
+  background-color: blue;
+  color: white;
+  margin-top: 10px;
+  margin-left: 130px;
+  border-radius: 5px;
+}
+#song {
+  float: left;
+  color: blue;
+  font-size: 0.2rem;
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  line-height: 60px;
+}
+.biao {
+  width: 0.5rem;
+  height: 0.5rem;
+  float: left;
+  margin-top: 0.1rem;
+}
+
+.one {
+  margin-top: 0.05rem;
+}
+
 </style>

@@ -1,21 +1,19 @@
 <template>
   <div id="wrap">
     <div id="top" @click="back()">
-      <img src="../../assets/img/back.png">
+      <img src="../../assets/img/back.png" />
       <p>会员中心</p>
     </div>
     <div id="member">
       <p>为账户{{this.$store.state.username}}购买会员</p>
     </div>
-    <router-link to="/discount">
-      <div id="privilege">
+      <div id="privilege" @click="discount()">
         <p>会员特权</p>
         <p>会员说明</p>
-        <img src="../../assets/img/youjian.png" alt>
+        <img src="../../assets/img/youjian.png" alt />
       </div>
-    </router-link>
     <div class="sheng">
-      <img src="../../assets/img/yewutubiaosheng.png" alt>
+      <img src="../../assets/img/yewutubiaosheng.png" alt />
       <div class="tex1">
         <p>减免配送费</p>
         <p>每月减免30单，每日可减免3单，每单最高减4元</p>
@@ -23,7 +21,7 @@
       </div>
     </div>
     <div class="sheng">
-      <img src="../../assets/img/yewutubiaosheng.png" alt>
+      <img src="../../assets/img/yewutubiaosheng.png" alt />
       <div class="tex1">
         <p>减免配送费</p>
         <p>每月减免30单，每日可减免3单，每单最高减4元</p>
@@ -36,26 +34,22 @@
     <div id="price">
       <span>1个月</span>
       <span>￥20</span>
-      <span>
-        <router-link to="/disburse">购买</router-link>
-      </span>
+      <span @click="goumai()">购买</span>
     </div>
-    <router-link to="/exchangevip">
-      <div class="exchange">
-        <span>兑换会员</span>
-        <span>使用卡号卡密</span>
-        <img src="../../assets/img/youjian.png" alt>
-      </div>
-    </router-link>
-    <router-link to="/buyrecord"><div class="exchange">
+    <div class="exchange" @click="exchange()">
+      <span>兑换会员</span>
+      <span>使用卡号卡密</span>
+      <img src="../../assets/img/youjian.png" alt />
+    </div>
+    <div class="exchange" @click="buyrecord()">
       <span>购买记录</span>
       <span>开发票</span>
-      <img src="../../assets/img/youjian.png" alt>
-    </div></router-link>
+      <img src="../../assets/img/youjian.png" alt />
+    </div>
   </div>
 </template>
 <script>
-import {mapState} from "vuex"
+import { mapState } from "vuex";
 export default {
   name: "membercenter",
   data() {
@@ -65,6 +59,26 @@ export default {
     ...mapState(["username"])
   },
   methods: {
+    discount(){
+      this.$router.push({
+        name: "discount"
+      });
+    },
+    goumai() {
+      this.$router.push({
+        name: "disburse"
+      });
+    },
+    exchange() {
+      this.$router.push({
+        name: "exchangevip"
+      });
+    },
+    buyrecord(){
+      this.$router.push({
+        name: "buyrecord"
+      });   
+    },
     back() {
       this.$router.back();
     }

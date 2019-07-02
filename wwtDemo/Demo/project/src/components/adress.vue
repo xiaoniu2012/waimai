@@ -172,7 +172,7 @@ export default {
 <style scoped>
 #ea{
    font-size: 0.2rem;
-   color: black;
+   color: white;
 }
 #tu {
   float: right;

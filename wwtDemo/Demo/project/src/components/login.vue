@@ -22,7 +22,7 @@
       </div>
       <div id="text2">
         <p>温馨提示:未注册过的账号,登录时将自动注册</p>
-        <p>注册过的用户可凭账号密码登录</p>
+        <p>注册过的用户可凭账号密码登录.</p>
       </div>
     </div>
     <button @click="login()">登录</button>
@@ -81,7 +81,8 @@ export default {
         console.log(res);
         if (res.data.message) {
           alert(res.data.message); //登陆失败
-        } else {
+        } else 
+        {
           //登陆成功，跳转到首页,编程式路由跳转，传值query或者params传值
           this.$router.push({
             name: "adress"

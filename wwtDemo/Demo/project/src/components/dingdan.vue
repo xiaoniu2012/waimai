@@ -44,12 +44,16 @@
       </div>
     </div>
     <div id="yin" @click="xiaoshi()" v-show="show"></div>
+    <p id="shop">
+        <span>{{name}}</span>
+        <img :src="'https://elm.cangdu.org/img/'+path" alt />
+      </p>
+
+
+
 
     <div id="list">
-      <p id="shop">
-        <img :src="'https://elm.cangdu.org/img/'+path" alt />
-        {{name}}
-      </p>
+      
       <ul :key="i" v-for="(v,i) in ming1" class="yihui">
         <li class="enen">{{v}}</li>
         <li class="en">x1</li>
@@ -323,14 +327,18 @@ export default {
   /* margin-top: -25px; */
   color: orange;
 }
-#shop img {
-  width: 50px;
-  /* height: 50px; */
-}
+
 #shop {
+  margin-top:3.2rem;
+  width: 3.75rem;
+  height: 2rem;
+  /* border: 1px solid rgb(153, 153, 153); */
   font-size: 0.2rem;
   color: black;
   font-weight: bold;
+}
+#shop img:nth-child(2) {
+  width: 0.45rem;
 }
 #list {
   width: 100%;
@@ -339,9 +347,9 @@ export default {
 
 #yin {
    width: 3.75rem;
-  height: 2.5rem;
+  height: 2rem;
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.4rem;
 }
 
 </style>

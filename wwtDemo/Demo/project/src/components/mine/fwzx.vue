@@ -7,8 +7,10 @@
     <!-- 在线客服部分 -->
     <div id="kefu">
       <div id="kefu1">
-        <img src="../../assets/img/kefu.png" alt>
+        <a href="tel:110">
+          <img src="../../assets/img/kefu.png" alt>
         <p>在线客服</p>
+        </a>
       </div>
       <div id="kefu2">
         <img src="../../assets/img/dianhua.png" alt>

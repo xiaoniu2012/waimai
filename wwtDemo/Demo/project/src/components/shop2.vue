@@ -310,13 +310,13 @@ export default {
   height: 100%;
 }
 .paixu {
-  width: 1.2rem;
+  width: 120px;
 }
 .shaixuan {
-  width: 1.2rem;
+  width: 120px;
 }
 .fenlei {
-  width: 1.2rem;
+  width: 120px;
 }
 #bt {
   float: left;
@@ -324,18 +324,17 @@ export default {
   margin-top: 5px;
 }
 #top1 {
-      float: right;
-    letter-spacing: 0.02rem;
-    /* margin-top: 0.05rem; */
-    margin-right: 0.5rem;
+  float: right;
+  letter-spacing: 2px;
+  margin-top: 5px;
 }
 #a1 {
-  background-color: #3190e8;
-  border: 1px solid #3190e8;
+  background-color: blue;
+  border: 1px solid blue;
   border-radius: 2px;
 }
 #a2 {
-  color: #3190e8!important;
+  color: blue!important;
   border-radius: 2px;
   box-sizing: border-box;
   border: 1px solid blue;
@@ -356,9 +355,11 @@ export default {
   margin-top: 5px;
 }
 #right {
-  /* float: right; */
-
-
+  float: right;
+  height: 100%;
+  width: 130px;
+  margin-right: 10px;
+  margin-top: -80px;
 }
 #left {
   float: left;
@@ -380,7 +381,7 @@ export default {
 }
 #distance {
   float: left;
-  margin-left: -0.3rem;
+  margin-left: -10px;
   font-size: 0.1rem;
 }
 #ping {
@@ -431,21 +432,19 @@ export default {
   float: left;
 }
 #bottom2 {
- width: 100%;
-    height: 0.8rem;
-    float: left;
-    margin-top: 0.1rem;
-    border-bottom: 0.005rem solid gainsboro;
+  width: 100%;
+  height: 80px;
+  float: left;
 }
 #bottom1 img {
-      width: 0.27rem;
-    float: left;
-    margin-top: 0.05rem;
+  width: 27px;
+  height: 27px;
+  float: left;
 }
 #bottom1 div {
   font-size: 0.15rem;
   float: left;
-      margin-top: 0.07rem;
+  margin-top: 2px;
 }
 #bottom1 {
   float: left;
@@ -518,9 +517,9 @@ export default {
 }
 #center12 {
   left: 0;
-  height: 0.25rem;
+  height: 25px;
   position: fixed;
-  top: 0.5rem;
+  top: 50px;
   display: flex;
   justify-content: space-around;
   direction: row;
@@ -534,16 +533,15 @@ export default {
   margin-left: 5px;
 }
 #top12 {
-  height: 0.5rem;
-    line-height: 0.5rem;
-    background-color: #3190e8;
-    position: fixed;
-    left: 0;
-    top: 0;
-    text-align: center;
-    color: white;
-    font-size: 0.25rem;
-    width: 100%;
-    font-weight: bold;
+  height: 50px;
+  background-color: blue;
+  position: fixed;
+  left: 0;
+  top: 0;
+  text-align: center;
+  color: white;
+  font-size: 0.25rem;
+  width: 100%;
+  font-weight: bold;
 }
 </style>

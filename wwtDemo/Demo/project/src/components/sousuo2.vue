@@ -8,7 +8,7 @@
       <button @click="search()" id="tijiao">提交</button>
     </div>
     <ul>
-      <li :key="i" v-for="(v,i) in food" @click="jumpshop1(i,v.name)">
+      <li :key="i" v-for="(v,i) in food" @click="jumpshop1(i)">
         <div @click="addss(v.name,v.address,v.geohash,v.longitude,v.latitude)">
           <router-link :to="'/shop1?name='+v.name">
         <h3 class="ming">{{v.name}}</h3>
@@ -84,9 +84,14 @@ export default {
         });
       }
     },
-    jumpshop1(i,n){
+    jumpshop1(i,v){
           this.$store.commit("jing", this.food[i].geohash);
-          this.$store.commit("getone",n);
+          console.log(this.food[i].geohash);
+          console.log(i)
+        //  this.$router.push({
+        //       name:"shop1",
+        //       query:v
+        //  });
     },
     addss(a,b,c,d,e){
         if(localStorage.name){
@@ -166,16 +171,15 @@ export default {
   margin-bottom: 1px;
 }
 .li2{
-     width: 3.55rem;
+  width:3.35rem;
 }
 .qk{
-   height: 0.1rem;
+   height: 0.15rem;
    text-align: center;
    line-height: 0.1rem;
    width: 100%;
    font-size: 0.15rem;
-   width: 3.55rem;
-   background-color: #f5f5f5;
+   width: 3.35rem;
 }
 #ul2{
   background-color: white;
@@ -209,8 +213,6 @@ export default {
 #shuru {
   width: 95%;
   height: 0.4rem;
-      border: 0.01rem solid gray;
-          font-size: 0.15rem;
 }
 #tijiao {
   background-color: rgb(48, 144, 232);
@@ -220,15 +222,14 @@ export default {
   font-size: 0.28rem;
 }
 ul {
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
 }
 ul li {
-  padding: 0.1rem;
-  padding-top: 0;
+  padding: 0.2rem;
   background-color: white;
   border-bottom: 1px solid gray;
 }
 ul li p {
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
 }
 </style>

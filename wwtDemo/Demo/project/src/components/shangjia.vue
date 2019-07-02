@@ -118,7 +118,7 @@
       <p class="er" @click="clall()">配送费￥5</p>
       <p id="zong" v-if="num>0">{{num}}</p>
       <router-link :to="'/dingdan?ming='+msg+'&pian='+imagepath">
-        <p id="suan">{{qusong}}</p>
+        <p class="suan">去结算</p>
       </router-link>
     </div>
     <router-view></router-view>
@@ -156,8 +156,7 @@ export default {
       elsesee: true,
       ifsee: false,
       kou: true,
-      allmoney: 0,
-      qusong:"还差20起送"
+      allmoney: 0
     };
   },
   created() {
@@ -198,6 +197,7 @@ export default {
           $ball[b].style.left = "5px";
           $ball[b].style.transition = "left 1s linear, top 1s ease-in";
         }, 20);
+<<<<<<< HEAD
         // }
       // }
       if(this.allmoney=20)
@@ -205,6 +205,9 @@ export default {
          this.qusong="去结算";
          var yu=document.getElementById("suan");
               yu.style.backgroundColor="green";
+=======
+        }
+>>>>>>> 1a6b5a32e40eae6bea2b793ab33f4896ef7be219
       }
     },
     jian(v, k, a, b) {
@@ -501,9 +504,9 @@ a {
   margin-left: 200px;
   margin-top: -30px;
 }
-#suan {
-  width:1.5rem;
-  background-color: grey;
+.suan {
+  width: 120px;
+  background-color: green;
   height: 100%;
   color: white;
   font-size: 0.2rem;

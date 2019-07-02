@@ -55,6 +55,7 @@ footer {
   display: flex;
   justify-content: space-around;
   font-size: 0.12rem;
+  z-index: 2
 }
 footer div img {
   width: 0.25rem;

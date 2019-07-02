@@ -2,8 +2,10 @@
   <div>
     <div id="hello">
       <div id="top1">
+         <!-- :style="{background:'url(https://elm.cangdu.org/img/${imagepath}'}" -->
+         <img class="tu1" :src="'https://elm.cangdu.org/img/'+imagepath" alt />
         <div id="one">
-          <img :src="'https://elm.cangdu.org/img/'+imagepath" alt />
+          <img class="tu2" :src="'https://elm.cangdu.org/img/'+imagepath" alt />
         </div>
         <div id="right">
           <p class="right1">{{msg}}</p>
@@ -91,8 +93,10 @@
       </ul>
     </div>
     <div id="alldian" v-show="jia">
-      <div class="cargo" v-if="shopping && sk1.length>0">
-        <p v-if="sk1.length>0 && shopping" class="pshop1">
+      <div class="cargo" >
+        <!-- v-if="shopping && sk1.length>0" -->
+        <p class="pshop1">
+          <!-- v-if="sk1.length>0 && shopping"  -->
           <span>购物车</span>
           <span @click="clearall(sk1)" class="clearall">清空</span>
         </p>
@@ -105,20 +109,21 @@
             <span v-if="y.specfoods.length>1 & elsesee">￥{{y.specfoods[0].price}}</span>
             <span v-if="y.specfoods.length>1 & ifsee">￥{{y.specfoods[1].price}}</span>
           </div>
-          <span class="jiangou" @click.stop="dejian(y._id)">-</span>
+          <span class="jiangou" @click.stop="dejian(y._id,y.specfoods[0].price,z)">-</span>
           <span class="reduceadd">{{y.is_featured}}</span>
-          <span class="jiagou" @click.stop="adjia(y._id)">+</span>
+          <!-- <span class="reduceadd">{{num}}</span> -->
+          <span class="jiagou" @click.stop="adjia(y._id,y.specfoods[0].price,z)">+</span>
         </div>
       </div>
     </div>
 
     <div id="jiesuan">
-      <img src="../assets/img/gouwuche.png" @click="alldian()" />
+      <img src="../assets/img/gouwuche.png" @click="alldian1()" />
       <p class="yi">￥{{allmoney}}</p>
       <p class="er">配送费￥5</p>
       <p id="zong" v-if="num>0">{{num}}</p>
       <router-link :to="'/dingdan?ming='+msg+'&pian='+imagepath">
-        <p class="suan">去结算</p>
+        <p id="suan">{{tosend}}</p>
       </router-link>
     </div>
     <router-view></router-view>
@@ -136,6 +141,7 @@ export default {
     return {
       shu1: 0,
       msg: "你好我的世界",
+      tosend:"还差20起送",
       imagepath: "",
       yu: 13,
       di: "",
@@ -201,6 +207,12 @@ export default {
         }, 20);
         }
       }
+      var tu=document.getElementById("suan");
+      if(this.allmoney>=20)
+      {
+      this.tosend="去结算";
+      tu.style.backgroundColor="green";
+      }
     },
     jian(v, k, a, b) {
       this.$store.commit("getdele", {
@@ -208,7 +220,6 @@ export default {
         b: b
       });
       this.$store.state.zongjia -= v;
-      // 得到新的总价
       this.allmoney -= v;
       if (this.allmoney < 0) {
         this.allmoney = 0;
@@ -216,34 +227,22 @@ export default {
     },
     chepi(n){
       var yu=document.getElementsByClassName("lis1");
-      for(var i=0;i<yu.length;i++)
-      {
-        yu[i].style.backgroundColor="";
-          yu[i].onclick=function()
+          yu[n].onclick=function()
           {
-            yu[n].style.backgroundColor="blue";
+              for(var i=0;i<yu.length;i++)
+               {   
+             yu[i].style.backgroundColor="";     
+              }
+               yu[n].style.backgroundColor="blue"; 
           }
-      }
+              
     },
-    alldian() {
+    alldian1() {
       this.foodname = this.$store.state.arr2;
       this.foodprice = this.$store.state.arr3;
-      this.xian++;
-      if (this.xian % 2 != 0) {
-        this.jia = true;
-      } else {
-        this.jia = false;
-      }
+       this.jia = !this.jia;
     },
     qingkong() {
-      this.$store.state.arr2 = this.$store.state.kong;
-      this.$store.state.arr3 = this.$store.state.kong;
-      this.$store.state.zongjia = 0;
-      this.foodname = "";
-      this.foodprice = "";
-      var nu1 = document.getElementsByClassName("n1");
-      nu1[0].nodeValue = "";
-      nu1[1].nodeValue = "";
       this.jia = false;
       this.allmoney = 0;
     },
@@ -301,11 +300,26 @@ export default {
     clall() {
       this.shopping = !this.shopping;
     },
-    adjia(a) {
+    adjia(a,b,c) {
       this.$store.commit("goujia", a);
+      // var nu=document.getElementsByClassName("reduceadd");
+      // for(var i=0;i<nu.length;i++)
+      // {
+      //    nu[i].nodeValue+=1;
+      // }
+      this.allmoney+=b;
+      if(this.allmoney<=0)
+      {
+        this.allmoney=0;
+      }
     },
-    dejian(b) {
-      this.$store.commit("goujian", b);
+    dejian(a,b,c) {
+      this.$store.commit("goujian", a);
+      this.allmoney-=b;
+       if(this.allmoney<=0)
+      {
+        this.allmoney=0;
+      }
     },
     clearall(s) {
       for (var i = 0; i < s.length; i++) {
@@ -360,6 +374,14 @@ export default {
    background-color: blue;
    float: left;
 }
+.tu2{
+position: absolute;
+  z-index: 200;
+  left: 0;
+  top: -3.5rem;
+  width: 0.8rem;
+
+}
 .jing{
    background-color: red;
    border-radius: 50%;
@@ -379,7 +401,7 @@ export default {
   top: 10px;
 }
 #push img {
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 .man {
@@ -433,39 +455,39 @@ export default {
 }
 .n1 {
   float: left;
-  width: 80px;
+  width: 0.8rem;
 }
 #alldian {
-  width: 350px;
-  border: 1px solid aqua;
+  width: 3.5rem;
+  /* border: 1px solid aqua; */
   position: fixed;
-  left: 1px;
-  bottom: 60px;
+  left: 0.01rem;
+  bottom: 0.6rem;
   font-size: 0.12rem;
   z-index: 2;
   background-color: white;
 }
 #ball {
-  width: 12px;
-  height: 12px;
+  width: 0.12rem;
+  height: 0.12rem;
   background: blue;
   border-radius: 50%;
   position: fixed;
-  left: -20px;
+  left: -0.2rem;
   transition: left 1s linear, top 1s ease-in;
   /* z-index:; */
 }
 .s {
   background-color: blue;
   color: white;
-  font-size: 0.15rem;
-  border-radius: 30%;
-  height: 35px;
-  width: 35px;
+  font-size: 0.4rem;
+  border-radius: 50%;
+  height: 0.35rem;
+  width: 0.35rem;
   text-align: center;
-  line-height: 30px;
-  margin-left: 140px;
-  margin-top: -35px;
+  line-height: 0.3rem;
+  margin-left: 1.4rem;
+  margin-top: -0.35rem;
 }
 .da {
   font-size: 0.2rem;
@@ -475,30 +497,30 @@ a {
 }
 #gou {
   position: absolute;
-  width: 330px;
-  height: 330px;
-  left: 40px;
-  top: 160px;
+  width: 3.3rem;
+  height: 3.3rem;
+  left: 0.4rem;
+  top: 1.6rem;
   background-color: white;
   position: fixed;
 }
 .gege {
   background-color: blue;
   color: white;
-  font-size: 0.15rem;
-  border-radius: 30%;
-  height: 35px;
-  width: 35px;
+  font-size: 0.4rem;
+  border-radius: 50%;
+  height: 0.35rem;
+  width: 0.35rem;
   text-align: center;
-  line-height: 35px;
-  margin-left: 200px;
-  margin-top: -30px;
+  line-height: 0.3rem;
+  margin-left: 2rem;
+  margin-top: -0.3rem;
 }
 .gege1 {
   background-color: blue;
   color: white;
   font-size: 0.15rem;
-  border-radius: 30%;
+  border-radius: 45%;
   height: 35px;
   width: 35px;
   text-align: center;
@@ -506,9 +528,9 @@ a {
   margin-left: 200px;
   margin-top: -30px;
 }
-.suan {
+#suan {
   width: 120px;
-  background-color: green;
+  background-color: grey;
   height: 100%;
   color: white;
   font-size: 0.2rem;
@@ -571,8 +593,8 @@ a {
   font-weight: bold;
 }
 .miao {
-  margin-left: 60px;
-  margin-top: -10px;
+  margin-left: 0.6rem;
+  /* margin-top: -10px; */
 }
 .content {
   width: 3.75rem;
@@ -580,7 +602,7 @@ a {
 }
 .hotShangping {
   width: 1rem;
-  /* background-color: #fff; */
+  background-color: gainsboro;
   overflow: hidden;
   float: left;
 }
@@ -618,71 +640,90 @@ a {
   background-color: white;
 }
 .xian {
-  width: 30%;
+  width: 45%;
   margin-left: 35%;
   border-bottom: 2px solid blue;
 }
 .pin {
   width: 50%;
-  height: 30px;
+  height: 0.3rem;
   float: left;
   font-size: 0.2rem;
   text-align: center;
-  line-height: 30px;
+  line-height: 0.3rem;
 }
 #gao {
   float: left;
-  margin-top: 60px;
-  margin-left: -60px;
-  height: 20px;
-  width: 180px;
-  overflow: hidden;
+    margin-top: 0.6rem;
+    width: 1.8rem;
+    height: 1rem;
+    overflow: hidden;
 }
 #dizhi {
   float: left;
   font-size: 3rem;
   background-color: green;
-  width: 30px;
-  height: 30px;
+  width: 0.3rem;
+  height: 0.3rem;
 }
 #right2 {
-  width: 30px;
+  width: 0.3rem;
   float: left;
-  height: 90px;
+  height: 0.9rem;
 }
 #right2 img {
-  width: 30px;
-  height: 30px;
-  margin-top: 30px;
-  margin-left: 20px;
+      width: 0.3rem;
+    height: 0.3rem;
+    position: absolute;
+    top: 1rem;
+    /* left: 0; */
+    right: 0.2rem;
+    z-index: 10;
 }
 .right1 {
-  float: left;
-  font-size: 0.18rem;
-  font-weight: bold;
-  margin-top: 2px;
-  margin-left: 5px;
+  position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    /* float: left; */
+    width: 80%;
+    font-size: 0.18rem;
+    font-weight: bold;
+    text-align: center;
 }
 #right {
-  float: left;
-  height: 90px;
-  width: 220px;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 10;
+  /* float: left; */
+  height: 0.9rem;
+  width: 2.2rem;
 }
-#top1 img {
+#top1>img:nth-child(1) {
   width: 100%;
 }
 #one {
   float: left;
-  width: 70px;
-  height: 70px;
-  margin-top: 10px;
-  margin-left: 5px;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0.1rem;
+  margin-left: 0.05rem;
+  position: relative;
 }
 #top1 {
   width: 3.75rem;
-  height: 90px;
+  height: 1.5rem;
   float: left;
-  background-color: bisque;
+  overflow: hidden;
+  
+}
+tu1{
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 /* 点击后显示的购物车样式 */
 .cargo {

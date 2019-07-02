@@ -4,7 +4,7 @@
     {{dizhi.name}}
     </div>
     <div id="xinxi">
-      <input id="shuru" v-model="keyword" placeholder="输入学校、商务楼、地址" type="text">
+      <input id="shuru"  v-model="keyword" placeholder="输入学校、商务楼、地址" type="text">
       <button @click="search()" id="tijiao">提交</button>
     </div>
     <ul>
@@ -168,15 +168,18 @@ export default {
   margin-bottom: 1px;
 }
 .li2{
-  width:3.35rem;
+  width:3.65rem;
 }
 .qk{
-   height: 0.15rem;
+   height: 0.3rem;
+   line-height: 0.3rem;
    text-align: center;
    line-height: 0.1rem;
-   width: 100%;
-   font-size: 0.15rem;
-   width: 3.35rem;
+   width: 96.5%;
+   font-size: 0.18rem;
+       height: 0.37rem;
+    background-color: #f5f5f5;
+    border: 0.01rem solid gainsboro;
 }
 #ul2{
   background-color: white;
@@ -210,6 +213,7 @@ export default {
 #shuru {
   width: 95%;
   height: 0.4rem;
+  font-size: 0.16rem;
 }
 #tijiao {
   background-color: rgb(48, 144, 232);
@@ -222,11 +226,11 @@ ul {
   margin-top: 0.2rem;
 }
 ul li {
-  padding: 0.2rem;
+  padding-left: 0.1rem;
   background-color: white;
   border-bottom: 1px solid gray;
 }
 ul li p {
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 </style>

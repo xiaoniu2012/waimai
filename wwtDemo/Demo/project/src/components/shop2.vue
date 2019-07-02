@@ -295,13 +295,13 @@ export default {
 </script>
 <style scoped>
 #fan {
-  width: 35px;
-  height: 35px;
+  width: 0.35rem;
+  height: 0.35rem;
   border: 1px solid grey;
   border-radius: 50%;
   position: fixed;
-  left: 300px;
-  top: 570px;
+  left: 3rem;
+  top: 5.7rem;
   z-index: 2;
   background-color:blue;
 }
@@ -310,23 +310,20 @@ export default {
   height: 100%;
 }
 .paixu {
-  width: 120px;
+  width: 1.2rem;
 }
 .shaixuan {
-  width: 120px;
+  width: 1.2rem;
 }
 .fenlei {
-  width: 120px;
+  width: 1.2rem;
 }
-#bt {
-  float: left;
-  margin-left: 20px;
-  margin-top: 5px;
-}
+
 #top1 {
   float: right;
-  letter-spacing: 2px;
-  margin-top: 5px;
+  letter-spacing: 0.02rem;
+  margin-top: 0.05rem;
+  margin-left: 0.5rem;
 }
 #a1 {
   background-color: blue;
@@ -334,7 +331,7 @@ export default {
   border-radius: 2px;
 }
 #a2 {
-  color: blue!important;
+  color: #3190e8!important ;
   border-radius: 2px;
   box-sizing: border-box;
   border: 1px solid blue;
@@ -351,15 +348,17 @@ export default {
 }
 #bt {
   float: left;
-  margin-left: 20px;
-  margin-top: 5px;
+  margin-left: -0.1rem;
+  margin-top: 0.05rem;
+  width: 2.1rem;
 }
 #right {
   float: right;
-  height: 100%;
-  width: 130px;
-  margin-right: 10px;
-  margin-top: -80px;
+    height: 100%;
+    width: 1.3rem;
+    margin-right: 0.1rem;
+    margin-top: -0.8rem;
+
 }
 #left {
   float: left;
@@ -367,9 +366,10 @@ export default {
   /* border: 1px solid red; */
 }
 #song {
-  float: left;
-  margin-top: 6px;
-  margin-left: -70px;
+      float: left;
+    margin-top: 0.06rem;
+    margin-left: -0.7rem;
+    color: black;
 }
 #qifei {
   float: left;
@@ -381,7 +381,7 @@ export default {
 }
 #distance {
   float: left;
-  margin-left: -10px;
+  /* margin-left: -10px; */
   font-size: 0.1rem;
 }
 #ping {
@@ -427,24 +427,27 @@ export default {
   font-size: 0.1rem;
   margin-left: 3px;
   margin-top: 3px;
+      color: black;
 }
 #peifei {
   float: left;
 }
 #bottom2 {
-  width: 100%;
-  height: 80px;
-  float: left;
+      width: 100%;
+    height: 0.8rem;
+    float: left;
+    border-bottom: 0.01rem solid gray;
+    margin-top: 0.1rem;
 }
 #bottom1 img {
-  width: 27px;
-  height: 27px;
-  float: left;
+      width: 0.27rem;
+    margin-top: 0.03rem;
+    float: left;
 }
 #bottom1 div {
   font-size: 0.15rem;
   float: left;
-  margin-top: 2px;
+      margin-top: 0.05rem;
 }
 #bottom1 {
   float: left;
@@ -517,9 +520,9 @@ export default {
 }
 #center12 {
   left: 0;
-  height: 25px;
+  height: 0.25rem;
   position: fixed;
-  top: 50px;
+  top: 0.5rem;
   display: flex;
   justify-content: space-around;
   direction: row;
@@ -528,13 +531,14 @@ export default {
 }
 #top12 img {
   float: left;
-  height: 30px;
-  margin-top: 10px;
-  margin-left: 5px;
+  height: 0.3rem;
+  margin-top: 0.1rem;
+  margin-left: 0.05rem;
 }
 #top12 {
-  height: 50px;
-  background-color: blue;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  background-color: #3190e8;
   position: fixed;
   left: 0;
   top: 0;

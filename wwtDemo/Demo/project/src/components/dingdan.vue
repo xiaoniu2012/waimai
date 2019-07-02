@@ -1,12 +1,12 @@
 <template>
   <div>
     <div id="top" @click="back1()">
-      <img src="../assets/img/back.png" class="one" />
+      <img src="../assets/img/back.png"/>
       <p>确认订单</p>
-      <img src="../assets/img/touxiang2.png" id="img" />
+      <img src="../assets/img/touxiang2.png"  />
     </div>
     <div id="dizhi" @click="adddizhi()">
-      <img src="../assets/img/juli.png" class="biao" />
+      <img src="../assets/img/juli.png" />
       <p>请添加一个收货地址</p>
       <img src="../assets/img/iconfontjiantou2.png" />
     </div>
@@ -15,43 +15,35 @@
       <p></p>
       <p>送达时间</p>
       <div id="right">
-        <span >尽快送达|预计{{hours}}{{fu}}{{minutes}}</span>
+        <span>尽快送达|预计{{hours}}{{fu}}{{minutes}}</span>
         <span>{{da1}}</span>
       </div>
     </div>
 
     <div id="pay">
-      <div @click="zhifu()">
-        <span >支付方式</span>
-        <span >
-          在线支付
-          <img src="../assets/img/iconfontjiantou2.png" id="tu" />
-        </span>
+      <div @click="zhifu()" id="pay01">
+        <span>支付方式</span>
+        <span>在线支付</span>
+        <img src="../assets/img/iconfontjiantou2.png" />
       </div>
-      <div class="fang">
+      <div id="pay02">
         <span>红包</span>
-        <span class="he">暂时只在饿了吗APP中支持</span>
+        <span>暂时只在饿了吗APP中支持</span>
       </div>
     </div>
 
-    <!-- <div id="xianjin">
-      <p id="jin1">支付方式</p>
-      <p id="jin2">
-        货到付款(商家暂时不支持货到付款)
-        <span>
-          <img src="../assets/img/icon-test2.png" id="hao" />
-        </span>
-      </p>
-      <p id="jin3">
-        在线支付
-        <span>
-          <img src="../assets/img/icon-test.png" id="jin4" />
-        </span>
-      </p>
+    <div id="xianjin" v-show="show">
+      <p>支付方式</p>
+      <div id="xianjin01">
+        <span>货到付款(商家暂时不支持货到付款)</span>
+        <img src="../assets/img/icon-test2.png"  />
+      </div>
+      <div id="xianjin02">
+        <span>在线支付</span>
+        <img src="../assets/img/icon-test.png" />
+      </div>
     </div>
-    <div id="yin" @click="xiaoshi()" v-show="show"></div> -->
-
-
+    <div id="yin" @click="xiaoshi()" v-show="show"></div>
 
     <div id="list">
       <p id="shop">
@@ -72,9 +64,6 @@
         </ul>
       </div>
     </div>
-
-
-    
   </div>
 </template>
 <script>
@@ -144,7 +133,7 @@ export default {
     zhifu() {
       // this.show=true;
       var yu = document.getElementById("xianjin");
-      yu.style.height = "370px";
+      yu.style.height = "0.1rem";
       this.show = true;
     },
     xiaoshi() {
@@ -196,9 +185,10 @@ export default {
   position: relative;
 }
 #dizhi img:nth-child(1) {
+  width: 0.45rem;
   position: absolute;
   left: 0.1rem;
-  top: 0.1rem;
+  top: 0.2rem;
 }
 #dizhi p:nth-child(2) {
   font-size: 0.18rem;
@@ -232,39 +222,86 @@ export default {
   left: 0.2rem;
   top: 0;
 }
-#right{
-     width: 2.4rem;
-     position: absolute;
-     left: 1.2rem;
-     top: 0;
+#right {
+  width: 2.4rem;
+  position: absolute;
+  left: 1.2rem;
+  top: 0;
 }
-#right span:nth-child(1){
-     font-size: 0.16rem;
+#right span:nth-child(1) {
+  font-size: 0.16rem;
 }
-#right span:nth-child(2){
-     font-size: 0.12rem;
-     margin-left: 0.1rem;
-     color: white;
-     background-color: #3190e8;
-     padding: 0.1rem;
+#right span:nth-child(2) {
+  font-size: 0.12rem;
+  margin-left: 0.1rem;
+  color: white;
+  background-color: #3190e8;
+  padding: 0.1rem;
 }
 
 #pay {
   width: 3.75rem;
-  height: 0.45rem;
+  height: 1rem;
   margin-top: 0.1rem;
-  background-color: gold;
-  border: 3px solid blue;
 }
-
-
-
-
-
-
-
-
-
+#pay01,
+#pay02 {
+  width: 3.75rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  font-size: 0.12rem;
+  position: relative;
+}
+#pay01 span:nth-child(1),
+#pay02 span:nth-child(1) {
+  font-size: 0.15rem;
+  position: absolute;
+  left: 0.1rem;
+}
+#pay01 span:nth-child(2),
+#pay02 span:nth-child(2) {
+  font-size: 0.15rem;
+  position: absolute;
+  top: 0.02rem;
+  right: 0.5rem;
+}
+#pay01 img:nth-child(3) {
+  width: 0.25rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.12rem;
+}
+#xianjin{
+  margin-top: 0.1rem;
+  width: 3.7rem;
+  height: 2.25rem;
+  border: 0.01px solid gray;
+}
+#xianjin p:nth-child(1){
+  width: 3.75rem;
+  height: 0.55rem;
+  background-color: #3190e8;
+  font-size: 0.15rem;
+  text-align: center;
+  line-height: 0.55rem;
+}
+#xianjin01,#xianjin02{
+  width: 3.75rem;
+  height: 0.85rem;
+  line-height: 0.85rem;
+  position: relative;
+}
+#xianjin01 span:nth-child(1),#xianjin02 span:nth-child(1){
+  font-size: 0.15rem;
+  position: absolute;
+  left: 0.1rem;
+}
+#xianjin01 img:nth-child(2),#xianjin02 img:nth-child(2){
+  width: 0.35rem;
+  position: absolute;
+  top:0.2rem;
+  right: 0.2rem;
+}
 
 
 .jia {
@@ -283,12 +320,12 @@ export default {
   float: left;
   margin-left: 140px;
   font-size: 0.15rem;
-  margin-top: -25px;
+  /* margin-top: -25px; */
   color: orange;
 }
 #shop img {
   width: 50px;
-  height: 50px;
+  /* height: 50px; */
 }
 #shop {
   font-size: 0.2rem;
@@ -297,90 +334,14 @@ export default {
 }
 #list {
   width: 100%;
-  height: 300px;
-  background-color: white;
   float: left;
 }
-#xianjin {
-  width: 3.75rem;
-  border: 1px solid red;
-  overflow: hidden;
-  z-index: 2;
-  position: absolute;
-  top: 370px;
-  left: 0;
-  background-color: white;
-  transition: all 0.8s;
-}
+
 #yin {
-  width: 100%;
-  height: 83%;
+   width: 3.75rem;
+  height: 2.5rem;
   position: absolute;
-  background-color: grey;
   opacity: 0.4;
-}
-#hao,
-#jin4 {
-  width: 25px;
-  height: 25px;
-  float: right;
-  margin-right: 10px;
-  margin-top: 20px;
-}
-#jin2,
-#jin3 {
-  width: 100%;
-  height: 70px;
-  font-size: 0.16rem;
-  text-align: left;
-  line-height: 70px;
-  color: grey;
-}
-#jin3 {
-  color: black;
-}
-#jin1 {
-  width: 100%;
-  height: 70px;
-  font-size: 0.2rem;
-  text-align: center;
-  line-height: 70px;
-  color: black;
-  background-color: aqua;
-}
-#tu {
-  width: 25px;
-  height: 25px;
-}
-
-
-.dao {
-  font-size: 0.17rem;
-  background-color: blue;
-  color: white;
-  margin-top: 10px;
-  margin-left: 130px;
-  border-radius: 5px;
-}
-#song {
-  float: left;
-  color: blue;
-  font-size: 0.2rem;
-  height: 50%;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  line-height: 60px;
-}
-.biao {
-  width: 0.5rem;
-  height: 0.5rem;
-  float: left;
-  margin-top: 0.1rem;
-}
-
-.one {
-  margin-top: 0.05rem;
 }
 
 </style>
